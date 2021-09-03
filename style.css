@@ -50,3 +50,11 @@ body {
     z-index: -1;
     transition: .4s ease;
 }
+
+.circle {
+   background-color: #fff;
+   color: #999; 
+   border-radius: 50%;
+   height: 30px;
+   width: 30px;
+}
