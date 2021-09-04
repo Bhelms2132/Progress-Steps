@@ -6,7 +6,7 @@ const circles = document.querySelectorAll('.circle')
 //--Represents an index
 let currentActive = 1
 
-//--Event Listner
+//--Event Listners
 next.addEventListener('click', () => {
     currentActive++
 
@@ -14,4 +14,29 @@ next.addEventListener('click', () => {
     if(currentActive > circles.length) {
         currentActive = circles.length
     }
+
+    //--Call Function
+  update()
 })
+
+prev.addEventListener('click', () => {
+    currentActive--
+
+    
+    if(currentActive < 1) {
+        currentActive = 1
+    }
+
+    //--Call Function
+    update()
+})
+
+function update() {
+    circles.forEach ((circle, idx) => {
+        if(idx < currentActive) {
+            circle.classList.add('active')
+        } else {
+            circle.classList.remove('active')
+        }
+    })
+}
